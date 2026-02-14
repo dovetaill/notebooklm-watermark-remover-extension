@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NotebookLM Cleaner</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="titlebar">
+        <div class="dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="file">notebooklm-cleaner.popup</span>
+      </header>
+
+      <section class="hero">
+        <h1>&gt; NotebookLM Cleaner</h1>
+        <p class="sub">// clean images and export one ZIP</p>
+      </section>
+
+      <section class="field-grid">
+        <label class="field" for="solverMode">
+          <span>Cleanup Style</span>
+          <select id="solverMode">
+            <option value="0">Balanced</option>
+            <option value="1">Smooth</option>
+            <option value="2">Fast</option>
+          </select>
+        </label>
+
+        <label class="field" for="unblendMode">
+          <span>Color Handling</span>
+          <select id="unblendMode">
+            <option value="0">Smart</option>
+            <option value="1">Keep Original</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-head">
+          <span id="progressPhase" class="phase">idle</span>
+          <span id="progressCount" class="count">0 / 0</span>
+        </div>
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric">Candidates <b id="metricCandidates">0</b></span>
+          <span class="metric">Exported <b id="metricAdded">0</b></span>
+          <span class="metric">Duplicates <b id="metricDuplicate">0</b></span>
+          <span class="metric">Failed <b id="metricError">0</b></span>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="runBatch" class="primary" type="button">Export Clean ZIP</button>
+        <button id="refreshSettings" type="button">Refresh</button>
+      </div>
+
+      <p id="status" class="status">Initializing…</p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
