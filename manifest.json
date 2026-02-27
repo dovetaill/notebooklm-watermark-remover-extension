@@ -20,7 +20,7 @@
   "content_scripts": [
     {
       "matches": ["https://notebooklm.google.com/*"],
-      "js": ["content/content.js"],
+      "js": ["shared/transport_codec.js", "content/content.js"],
       "run_at": "document_idle"
     }
   ],
